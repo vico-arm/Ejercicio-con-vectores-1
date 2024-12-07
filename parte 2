@@ -1,0 +1,44 @@
+//Calculador de maximo, promedio y minimo de un vector por Víctor Armas
+#include <iostream>
+using namespace std;
+int main() {
+    int tamvec= 0, val=0, prom=0;
+    cout<<"Ingrese la longitud del vector: ";
+    cin>>tamvec;
+    int vect[tamvec];
+    for(int i=0;i<tamvec;i++){
+        cout<<"ingrese una componente del vector: ";
+        cin>>val;
+        vect[i]=val;
+    }
+    cout<<"vect = { ";
+    for (int i=0;i<tamvec;i++){
+        cout<<vect[i];
+        if (i == tamvec-1){
+            cout<<"}"<<endl;
+        }else{
+            cout<<",";
+        }
+    }
+
+    int maximo = vect[0];
+    for (int i = 0; i<tamvec; i++){
+        if(maximo<vect[i]){
+            maximo = vect[i];
+        }
+    }
+    cout<<"El maximo es: "<<maximo<<endl;
+    maximo=0;
+    for (int i=0;i<tamvec;i++){
+        maximo=maximo+vect[i];
+    }
+    cout<<"El promedio es: "<<maximo/tamvec<<endl;
+    maximo=vect[0];
+    for (int i = 0; i<=tamvec; i++){
+        if(maximo>vect[i]){
+            maximo = vect[i];
+        }
+    }
+    cout<<"el minimo es: "<<maximo;
+    return 0;
+}
