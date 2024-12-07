@@ -1,0 +1,56 @@
+//Calculador del dia del año por Víctor Armas
+#include <iostream>
+using namespace std;
+int main() {
+    int dia=0, diaño=0, mes = 0;
+    
+    int meses[12]={0,meses[0]+31,meses[1]+28,meses[2]+31,meses[3]+30,meses[4]+31,meses[5]+30,meses[6]+31,meses[7]+31,meses[8]+30,meses[9]+31,meses[10]+30};
+    do{
+    cout<<"Ingresar un mes del año(1 enero, 12 Diciembre): ";
+    cin>>mes;
+    cout<<"ingresar un dia de ese mes(Que no salga de la cantidad de dias que tiene ese mes): ";
+        cin>>dia;
+        switch(mes) {
+        case 1:
+        diaño = meses[0]+dia;
+        break;
+        case 2:
+        diaño = meses[1]+dia;
+        break;
+        case 3:
+        diaño = meses[2]+dia;
+        break;
+        case 4:
+        diaño = meses[3]+dia;
+        break;
+        case 5:
+        diaño = meses[4]+dia;
+        break;
+        case 6:
+        diaño = meses[5]+dia;
+        break;
+        case 7:
+        diaño = meses[6]+dia;
+        break;
+        case 8:
+        diaño = meses[7]+dia;
+        break;
+        case 9:
+        diaño = meses[8]+dia;
+        break;
+        case 10:
+        break;
+        case 11:
+        diaño = meses[10]+dia;
+        break;
+        case 12:
+        diaño = meses[11]+dia;
+        break;
+        default:
+        cout<<"Esa no es una opción valida"<<endl;
+        break;
+        }
+    }while(mes < 0 || mes > 12);
+    cout<<"La fecha "<<dia<<" de "<<mes<<" es el dia numero "<<diaño;
+    return 0;
+}
